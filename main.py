@@ -166,7 +166,7 @@ def relatorio():
     """
     for codigo, info in estoque.items():
         print(f"Descrição: {info['descricao'].ljust(30)} Código: {codigo.rjust(3)} Quantidade: {str(info['quantidade']).rjust(2)} Custo: {str(info['custo']).rjust(7)} Preço: {str(info['preco']).rjust(7)} Total: {(info['quantidade'] * info['preco'])}")
-    print(f"Custo total: {sum(info['quantidade'] * info['custo'] for info in estoque.values())}")
+    print(f"\nCusto total: {sum(info['quantidade'] * info['custo'] for info in estoque.values())}")
     print(f"Faturamento total: {sum(info['quantidade'] * info['preco'] for info in estoque.values())}")
 
 def menu():
