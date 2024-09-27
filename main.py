@@ -49,20 +49,22 @@ def ordenar():
     for codigo, info in produtos_ordenados:
         print(f"Descrição: {info['descricao']}, Código: {codigo}, Quantidade: {info['quantidade']}, Custo: {info['custo']}, Preço: {info['preco']}")
 
-def buscar(descricao=None, codigo=None):
+def buscar(descricao, codigo):
     """
-    Função para buscar produtos no estoque com base na descrição ou código
+    Função para buscar um produto no estoque
 
     Parâmetros:
     descricao (str): Descrição do produto
     codigo (str): Código do produto
+
+    Retornos:
+    str: Mensagem de erro
     """
-    for info in estoque.values():
-        if descricao and descricao in info['descricao']:
+    for codigo, info in estoque.items():
+        if descricao in info['descricao'] or codigo == codigo:
             print(f"Descrição: {info['descricao']}, Código: {codigo}, Quantidade: {info['quantidade']}, Custo: {info['custo']}, Preço: {info['preco']}")
-        if codigo and codigo in estoque:
-            info = estoque[codigo]
-            print(f"Descrição: {info['descricao']}, Código: {codigo}, Quantidade: {info['quantidade']}, Custo: {info['custo']}, Preço: {info['preco']}")
+            return
+        print("Produto não encontrado")
 
 def remover(codigo):
     """
