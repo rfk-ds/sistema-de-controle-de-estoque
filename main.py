@@ -158,7 +158,7 @@ def lucro_presumido():
     lucro = 0
     for info in estoque.values():
         lucro += info['quantidade'] * (info['preco'] - info['custo'])
-    return lucro
+    return(f"Lucro presumido do estoque: R${lucro:.2f}")
 
 def relatorio():
     """
