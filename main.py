@@ -202,9 +202,14 @@ def menu():
     elif opcao == "3":
         ordenar()
     elif opcao == "4":
-        descricao = input("Descrição: ")
-        codigo = input("Código: ")
-        buscar(descricao, codigo)
+        print("Pesquisar por: \n\n1 - Descrição\n2 - Código\n")
+        opcao = input("Escolha uma opção: ")
+        if opcao == "1":
+            descricao = input("Descrição: ")
+            buscar(descricao, "")
+        elif opcao == "2":
+            codigo = input("Código: ")
+            buscar("", codigo)
     elif opcao == "5":
         codigo = input("Código: ")
         print(remover(codigo))
