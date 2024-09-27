@@ -89,6 +89,8 @@ def esgotados():
     for codigo, info in estoque.items():
         if info['quantidade'] == 0:
             print(f"Descrição: {info['descricao']}, Código: {codigo}, Quantidade: {info['quantidade']}, Custo: {info['custo']}, Preço: {info['preco']}")
+        else:
+            print("Não há produtos esgotados.")
 
 def baixa_quantidade(limite=10):
     """
