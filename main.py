@@ -146,7 +146,7 @@ def calcular_total():
     total = 0
     for info in estoque.values():
         total += info['quantidade'] * info['preco']
-    return total
+    return(f"Valor total do estoque: R${total:.2f}")
 
 def lucro_presumido():
     """
